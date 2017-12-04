@@ -2,8 +2,8 @@
 This module lets you experience the POWER of FUNCTIONS and PARAMETERS.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Justin.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -14,7 +14,7 @@ def main():
     # Un-comment the next lines when you are ready to use them.
     # run_test_better_draw_circles()
     # run_test_even_better_draw_circles()
-
+    run_test_better_draw_circles()
 
 # ----------------------------------------------------------------------
 # READ THIS:
@@ -64,7 +64,7 @@ def draw_circles():
     window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# done: 2.
 #   First, RUN this program.  You will see that draw_circles draws
 #   concentric circles whose radii vary by 10.
 #
@@ -95,7 +95,7 @@ def draw_circles():
 
 
 # ----------------------------------------------------------------------
-# TODO: 3.
+# done: 3.
 #   In the previous exercise, you made a MORE POWERFUL version
 #   of draw_circles by introducing a PARAMETER for the amount by
 #   which the radii of the concentric circles increase.
@@ -122,6 +122,32 @@ def draw_circles():
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+def run_test_better_draw_circles():
+
+    window2 = rg.RoseWindow(400, 400)
+
+    x = 100
+    y = 300
+
+    for k in range(41):
+
+        center = rg.Point(x, y)
+
+        circle = rg.Circle(center, 3*k)
+
+        circle.attach_to(window2)
+
+        window2.render(0.05)
+
+        x += 5
+        y -= 5
+
+    window2.close_on_mouse_click()
+
+
+
+
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
