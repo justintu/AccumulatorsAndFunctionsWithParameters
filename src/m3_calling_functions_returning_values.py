@@ -7,8 +7,8 @@ This module demonstrates and practices:
   -- UNIT TESTING.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Justin.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m3t_tester
 
@@ -37,7 +37,7 @@ def main():
 def run_test_sum_of_digits():
     """ Tests the  sum_of_digits   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function, as follows:
+    # done: 2. Implement this TEST function, as follows:
     #
     #  Step 1:  This TEST function tests the  sum_of_digits  function.
     #    So read the doc-string of the  sum_of_digits  function
@@ -63,7 +63,7 @@ def run_test_sum_of_digits():
 
     # Test 1:
     expected = 16
-    answer = sum_of_digits(826)
+    answer = sum_of_digits(827)
     print('Test 1 expected:', expected)
     print('       actual:  ', answer)
 
@@ -134,16 +134,45 @@ def run_test_digits_in_cube():
     print('Testing the   digits_in_cube   function:')
     print('-----------------------------------------------------')
 
+# Test 1:
+    expected = 10
+    answer = digits_in_cube(4)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
 
-def digits_in_cube(n):
-    """
-    What comes in:  A positive integer.
-    What goes out:  The sum of the digits in the CUBE of the integer.
+def digits_in_cube(number):
+    """ digits in the CUBE of the integer.
     Side effects:   None.
+    What comes in:  A positive integer.
+    What goes out:  The sum of the
     Example:
       If the integer (n) is 5    (so n cubed is 125),
       this function returns (1 + 2 + 5), which is 8.
     """
+    number = number ** 3
+
+    if number < 0:
+        number = -number
+
+    digits_of_sum = 0
+
+    while True:
+        if number == 0:
+            break
+
+        digits_of_sum = digits_of_sum + (number % 10)
+        number = number // 10
+
+    return digits_of_sum
+
+
+
+    return number
+
+
+
+
+
     # ------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
@@ -207,6 +236,13 @@ def run_test_fancy_sums_of_digits():
     print('Testing the   fancy_sums_of_digits   function:')
     print('--------------------------------------------------')
 
+    # Test x:
+
+    expect = "Unknow"
+    answer =fancy_sums_of_digits(6)
+    print("Test x expected", expect)
+    print("       actual", answer)
+
     # ------------------------------------------------------------------
     # HINT:  For your 1st test, consider  n=10.  Figure out BY HAND
     # the correct (expected) answer for that test case.  (It's easy.)
@@ -216,7 +252,7 @@ def run_test_fancy_sums_of_digits():
     # ------------------------------------------------------------------
 
 
-def fancy_sums_of_digits(n):
+def fancy_sums_of_digits(jojo):
     """
     What comes in:  A positive integer n.
     What goes out:
@@ -241,13 +277,32 @@ def fancy_sums_of_digits(n):
             -- so this function returns 124309.
     """
     # ------------------------------------------------------------------
-    # TODO: 8. Implement and test this function.
+    # done: 8. Implement and test this function.
     #
     ####################################################################
     # IMPORTANT: CALL, as many times as needed,
     #    the    sum_of_digits    function that is DEFINED ABOVE.
     ####################################################################
     # ------------------------------------------------------------------
+
+    jojo = jojo ** 1000
+
+    if jojo < 0:
+        jojo = -jojo
+
+    digits_of_sun_of_jojo = 0
+
+    while True:
+        if jojo == 0:
+            break
+
+        digits_of_sun_of_jojo = digits_of_sun_of_jojo + (jojo % 10)
+        jojo = jojo // 10
+
+    return digits_of_sun_of_jojo
+
+
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
